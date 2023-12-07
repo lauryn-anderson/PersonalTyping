@@ -31,6 +31,11 @@ void keyPressed() {
   redraw();
 }
 
+void mouseClicked() {
+  swapScheme();
+  redraw();
+}
+
 void redraw() {
   background(50);
   if (horizontals.size() > 0) {
@@ -72,9 +77,10 @@ class Stripe {
 }
 
 String getKeyType() {
-  // check for a-z, A-Z
-  if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z')) {
-    return "letter";
-  }
+  if (key == BACKSPACE) return "delete";
+  if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z')) return "letter";
+  if (key <= ' ') return "whitespace";
+  if (key >= '0' && key <= '9') return "number";
+  if (key < 'A') return "punctuation";
   return "other";
 }
