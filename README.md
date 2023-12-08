@@ -2,9 +2,9 @@
 ### Lauryn Anderson
 ### CPSC 583, Fall 2023
 
-In this assignment, I designed a visualization of keyboard and mouse input to create an attractive representation of personal typing characteristics. To come up with an effective design, I was inspired by a type of artistic design that has been used for centuries to encode identity. 
+In this assignment, I designed a visualization of keyboard and mouse input to create an attractive representation of personal typing characteristics. This short project was inspired by [this paper](https://dl.acm.org/doi/10.5555/2384179.2384186) on personalizing typed text.
 
-Tartan/plaid is a patterned cloth that criss-crosses horizontal and vertical stripes to form rectangular patterns. From at least the 1800s, certain patterns have been used as distinctive symbols for Scottish clans or families. 
+To come up with an effective design, I was inspired by a type of artistic design that has been used for centuries to encode identity. Tartan/plaid is a patterned cloth that criss-crosses horizontal and vertical stripes to form rectangular patterns. From at least the 1800s, certain patterns have been used as distinctive symbols for Scottish clans or families. 
 
 My tool, implemented in Processing, creates a unique plaid pattern dynamically based on the following inputs:
 
