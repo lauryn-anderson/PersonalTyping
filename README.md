@@ -6,6 +6,12 @@ In this assignment, I designed a visualization of keyboard and mouse input to cr
 
 To come up with an effective design, I was inspired by a type of artistic design that has been used for centuries to encode identity. Tartan/plaid is a patterned cloth that criss-crosses horizontal and vertical stripes to form rectangular patterns. From at least the 1800s, certain patterns have been used as distinctive symbols for Scottish clans or families. 
 
+<img src="examples/example1.png" width="300" />
+<img src="examples/example2.png" width="300" />
+<img src="examples/example3.png" width="300" />
+<img src="examples/example4.png" width="300" />
+
+
 My tool, implemented in Processing, creates a unique plaid pattern dynamically based on the following inputs:
 
 Keyboard input: 
