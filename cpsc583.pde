@@ -101,7 +101,8 @@ String getKeyType() {
   // look at last key pressed and return type of key (letter, number, etc)
   
   if (key == BACKSPACE) return "delete";
-  if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z')) return "letter";
+  if (key >= 'a' && key <= 'z') return "lowercase";
+  if (key >= 'A' && key <= 'Z') return "capital";
   if (key <= ' ') return "whitespace";
   if (key >= '0' && key <= '9') return "number";
   if (key < 'A') return "punctuation";
@@ -142,21 +143,24 @@ HashMap<String, Integer[]> currentScheme;
 HashMap<String, Integer[]> scheme1;
 HashMap<String, Integer[]> scheme2;
 HashMap<String, Integer[]> scheme3;
+HashMap<String, Integer[]> scheme4;
 
 void colorSetup() {
   // initialize various colour scheme options
   
   scheme1 = new HashMap<String, Integer[]>();
   scheme1.put("delete", new Integer[]{150, 150, 150});
-  scheme1.put("letter", new Integer[]{50, 0, 0});
-  scheme1.put("whitespace", new Integer[]{0, 0, 50});
-  scheme1.put("number", new Integer[]{0, 50, 0});
-  scheme1.put("punctuation", new Integer[]{50, 50, 0});
+  scheme1.put("lowercase", new Integer[]{50, 0, 0});
+  scheme1.put("capital", new Integer[]{100, 0, 0});
+  scheme1.put("whitespace", new Integer[]{0, 0, 70});
+  scheme1.put("number", new Integer[]{10, 50, 0});
+  scheme1.put("punctuation", new Integer[]{80, 20, 20});
   scheme1.put("other", new Integer[]{100, 100, 0});
 
   scheme2 = new HashMap<String, Integer[]>();
   scheme2.put("delete", new Integer[]{150, 150, 150});
-  scheme2.put("letter", new Integer[]{100, 80, 0});
+  scheme2.put("lowercase", new Integer[]{80, 60, 0});
+  scheme2.put("capital", new Integer[]{160, 120, 0});
   scheme2.put("whitespace", new Integer[]{50, 0, 100});
   scheme2.put("number", new Integer[]{0, 0, 0});
   scheme2.put("punctuation", new Integer[]{100, 0, 0});
@@ -164,11 +168,21 @@ void colorSetup() {
 
   scheme3 = new HashMap<String, Integer[]>();
   scheme3.put("delete", new Integer[]{150, 150, 150});
-  scheme3.put("letter", new Integer[]{20, 50, 20});
+  scheme3.put("lowercase", new Integer[]{20, 50, 10});
+  scheme3.put("capital", new Integer[]{40, 100, 20});
   scheme3.put("whitespace", new Integer[]{0, 0, 0});
   scheme3.put("number", new Integer[]{100, 50, 0});
   scheme3.put("punctuation", new Integer[]{50, 50, 100});
   scheme3.put("other", new Integer[]{50, 50, 0});
+
+  scheme4 = new HashMap<String, Integer[]>();
+  scheme4.put("delete", new Integer[]{150, 150, 150});
+  scheme4.put("lowercase", new Integer[]{40, 50, 80});
+  scheme4.put("capital", new Integer[]{80, 100, 160});
+  scheme4.put("whitespace", new Integer[]{30, 0, 30});
+  scheme4.put("number", new Integer[]{50, 80, 20});
+  scheme4.put("punctuation", new Integer[]{100, 80, 0});
+  scheme4.put("other", new Integer[]{50, 50, 50});
 
   currentScheme = scheme1;
 }
@@ -180,6 +194,8 @@ void swapScheme() {
     currentScheme = scheme2;
   } else if (currentScheme == scheme2) {
     currentScheme = scheme3;
+  } else if (currentScheme == scheme3) {
+    currentScheme = scheme4;
   } else {
     currentScheme = scheme1;
   }
